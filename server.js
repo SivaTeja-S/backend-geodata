@@ -1,12 +1,15 @@
 require('dotenv').config(); // Load environment variables
 const express = require('express');
 const connectDB = require('./db');
-
+const cors=require('cors')
 const app = express();
 
 // Connect to Database
 connectDB();
-
+const corsOptions = {
+    origin: 'http://localhost:3000', // Adjust this to match your frontend URL
+  };
+app.use(cors(corsOptions));
 // Middleware
 app.use(express.json());
 

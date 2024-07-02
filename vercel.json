@@ -6,6 +6,12 @@
     "routes": [
       { "src": "/api/users/(.*)", "dest": "/server.js" },
       { "src": "/(.*)", "dest": "/server.js" }
-    ]
+    ],
+    "functions": {
+      "api/*": {
+        "memory": 128,
+        "maxDuration": 10
+      }
+    }
   }
   

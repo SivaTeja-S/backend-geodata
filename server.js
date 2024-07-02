@@ -6,10 +6,10 @@ const app = express();
 
 // Connect to Database
 connectDB();
-const corsOptions = {
-    origin: 'http://localhost:3000', // Adjust this to match your frontend URL
-  };
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: 'http://localhost:3000', // Adjust this to match your frontend URL
+//   };
+app.use(cors);
 // Middleware
 app.use(express.json());
 

@@ -3,7 +3,11 @@ const connectDB = require('../db');
 const userRoutes = require('./users');
 const serverless = require('serverless-http');
 require('dotenv').config(); // Add this line to load environment variables
-
+const cors = require('cors');
+const corsOptions = {
+  origin: 'http://localhost:3000', // Adjust this to match your frontend URL
+};
+app.use(cors(corsOptions));
 const app = express();
 
 // Middleware
